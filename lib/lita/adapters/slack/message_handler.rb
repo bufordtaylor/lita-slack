@@ -12,6 +12,7 @@ module Lita
         end
 
         def handle
+          log.debug("debug lita yay #{type}")
           case type
           when "hello"
             handle_hello

@@ -97,6 +97,8 @@ module Lita
         def receive_message(event)
           data = MultiJson.load(event.data)
 
+          log.debug("debug lita yay #{data}")
+
           EventLoop.defer { MessageHandler.new(robot, robot_id, data, config).handle }
         end
 
