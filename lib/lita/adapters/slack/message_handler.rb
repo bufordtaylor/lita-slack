@@ -122,6 +122,7 @@ module Lita
           message.command! if source.private_message?
           message.extensions[:slack] = { timestamp: data["ts"] }
           log.debug("Dispatching message to Lita from #{user.id}.")
+          log.debug("debug message #{body} - #{robot} - #{source}.")
           robot.receive(message)
         end
 
